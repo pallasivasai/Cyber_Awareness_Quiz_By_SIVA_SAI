@@ -175,3 +175,22 @@ The Supabase client/environment configuration used by the project must also be a
 ## Links
 
 - [GitHub Repository](https://github.com/pallasivasai/Cyber_Awareness_Quiz_By_SIVA_SAI)
+
+
+## 🏗️ Architecture
+
+```mermaid
+flowchart TD
+    A[Login / Signup] --> B[Choose Difficulty]
+    B --> C[Supabase quiz_questions]
+    C --> D[Shuffle + Select 10]
+    D --> E[Fullscreen Quiz + Timer]
+    E --> F[Score Calculation]
+    F --> G[quiz_scores]
+    F --> H{Score >= 75%?}
+    H -->|Yes| I[Certificate]
+    I --> J[Certificate Verification]
+    F --> K[Leaderboard]
+```
+
+The flow follows the current authentication, difficulty filtering, randomized ten-question quiz, fullscreen/timer, score persistence, certificate, and leaderboard behavior.
